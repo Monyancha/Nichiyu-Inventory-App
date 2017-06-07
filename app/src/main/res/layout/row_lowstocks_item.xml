@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Item ID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewItemId"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="Description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewDescription"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="Part Number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewPartNumber"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="Qty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewQuantity"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

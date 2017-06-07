@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_all_records"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.markandreydelacruz.nichiyuinventory.AllRecords">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/searchViewAllRecords" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark">
+
+                <TextView
+                    android:text="ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@android:color/white"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
+                <TextView
+                    android:text="DESCRIPTION"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@android:color/white"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
+                <TextView
+                    android:text="PART #"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@android:color/white"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewAllRecords" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

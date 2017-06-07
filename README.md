@@ -1,0 +1,1 @@
+# Nichiyu-Inventory-App
