@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         editTextHostAddress = (EditText) findViewById(R.id.editTextHostAddress);
         hostAddress = editTextHostAddress.getText().toString();
-        new MainActivity.BackgroundTaskTestHostAddress().execute("http://"+ hostAddress +"/nichiyuInventory/api/warehouse/testHostAddress.php");
+        new MainActivity.BackgroundTaskTestHostAddress().execute("http://"+ hostAddress +"/nichiyuInventory/api/json/warehouse/testHostAddress.php");
 
         ImageButton imageButtonAllRecords = (ImageButton) findViewById(R.id.imageButtonAllRecords);
         imageButtonAllRecords.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 hostAddress = editTextHostAddress.getText().toString();
                 Intent intent = new Intent(MainActivity.this, AllRecords.class);
-                intent.putExtra("urlString", "http://"+ hostAddress +"/nichiyuInventory/api/warehouse/getAllItems.php");
+                intent.putExtra("urlString", "http://"+ hostAddress +"/nichiyuInventory/api/json/warehouse/getAllItems.php");
                 startActivity(intent);
             }
         });
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 hostAddress = editTextHostAddress.getText().toString();
                 Intent intent = new Intent(MainActivity.this, LowStocks.class);
-                intent.putExtra("urlString", "http://"+ hostAddress +"/nichiyuInventory/api/warehouse/getLowStocks.php");
+                intent.putExtra("urlString", "http://"+ hostAddress +"/nichiyuInventory/api/json/warehouse/getLowStocks.php");
                 startActivity(intent);
             }
         });
@@ -94,9 +94,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 hostAddress = editTextHostAddress.getText().toString();
-                Intent intent = new Intent(MainActivity.this, BoxNumbers.class);
-                intent.putExtra("urlString", "http://"+ hostAddress +"/pupSisGradesWebCrawler/getContent.php");
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "empty", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this, BoxNumbers.class);
+//                intent.putExtra("urlString", "http://"+ hostAddress +"/pupSisGradesWebCrawler/getContent.php");
+//                startActivity(intent);
+
             }
         });
 
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 hostAddress = editTextHostAddress.getText().toString();
                 hideSoftKeyboard(MainActivity.this);
-                new MainActivity.BackgroundTaskTestHostAddress().execute("http://"+ hostAddress +"/nichiyuInventory/api/warehouse/testHostAddress.php");
+                new MainActivity.BackgroundTaskTestHostAddress().execute("http://"+ hostAddress +"/nichiyuInventory/api/json/warehouse/testHostAddress.php");
             }
         });
     }
@@ -140,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 StringBuilder stringBuilder = new StringBuilder();
                 while((jsonString = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(jsonString + "\n");
+                    stringBuilder.append(jsonString).append("\n");
                 }
                 bufferedReader.close();
                 inputStream.close();
@@ -152,10 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
                 return jsonString;
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (SocketTimeoutException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -201,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         InputMethodManager inputMethodManager =
                 (InputMethodManager) activity.getSystemService(
                         Activity.INPUT_METHOD_SERVICE);
+        //noinspection ConstantConditions
         inputMethodManager.hideSoftInputFromWindow(
                 activity.getCurrentFocus().getWindowToken(), 0);
     }

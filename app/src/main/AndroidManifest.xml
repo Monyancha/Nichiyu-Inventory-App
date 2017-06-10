@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanQrCode" android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ScanQrCode" android:screenOrientation="portrait"/>
         <activity android:name=".AllRecords" android:configChanges="orientation|screenSize"/>
         <activity android:name=".LowStocks" android:configChanges="orientation|screenSize"/>
         <activity android:name=".BoxNumbers" android:configChanges="orientation|screenSize"/>
