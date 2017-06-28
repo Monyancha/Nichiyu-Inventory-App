@@ -1,4 +1,4 @@
-# Nichiyu-Inventory-App
+# Nichiyu Inventory Monitoring App
 
 
 ## Screenshots
