@@ -126,11 +126,11 @@ public class AllRecords extends AppCompatActivity {
                 listViewAllRecords.setOnItemClickListener(new AdapterView.OnItemClickListener() {  // list item click opens a new detailed activity
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                        AllRecordsModel allRecordsModel = result.get(position); // getting the model
+                        AllRecordsModel allRecordsModel = result.get(position); // getting the model
 //                        Intent intent = new Intent(AllRecords.this, AllRecordsDetails.class);
 //                        intent.putExtra("allRecordsModel", new Gson().toJson(allRecordsModel)); // converting model json into string type and sending it via intent
 //                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "Item Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), new Gson().toJson(allRecordsModel), Toast.LENGTH_SHORT).show();
                     }
                 });
                 if (this.dialog.isShowing()) {

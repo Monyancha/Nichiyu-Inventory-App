@@ -91,7 +91,7 @@ public class ScanQrCode extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            jsonUrl = "http://"+ hostAddress +"/nichiyuInventory/api/warehouse/getItemDetails.php?partNumber=\""+partNumber+"\"";
+            jsonUrl = "http://"+ hostAddress +"/nichiyuInventory/api/json/warehouse/getItemDetails.php?partNumber=\""+partNumber+"\"";
             super.onPreExecute();
             dialog = new ProgressDialog(ScanQrCode.this);
             dialog.setMessage("Please wait...");
